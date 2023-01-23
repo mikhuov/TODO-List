@@ -1,0 +1,8 @@
+.contents {
+    display: grid;
+}
+
+.contents-items {
+    display: grid;
+    row-gap: 50px;
+}
