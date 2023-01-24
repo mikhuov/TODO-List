@@ -1,20 +1,57 @@
 ul li:nth-child(odd) {
-    background: #f9f9f9;
+    background: #252d3c;
+    color: #f9f9f9;
   }
 
 ul li.checked {
-    background: #888;
-    color: #fff;
+    color: rgb(167, 167, 167);
     text-decoration: line-through;
 }
 
 li{
+    max-width: 98%;
+    border-radius: 10px 0px 0px 10px;
     font-size: 5rem;
+    font-family:'Courier New', Courier, monospace;
     list-style: none;
 }
 
+input[type="text"] {
+    border-radius: 10px 0px 0px 10px;
+    width: 340px;
+    height: 50px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    padding: 0 25px;
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #ee7c35;
+    border-radius: 0px 10px 10px 0px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    left: -5px;
+    position: relative;
+}
+
+button:hover {
+    background-color:#bd642d;
+}
+
+button:focus {
+    background-color:#ffffff;}
+
 .title{
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 .contents {
@@ -22,11 +59,10 @@ li{
 }
 
 .selectButton{
-    background-color: #4CAF50; /* Green */
-    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 0px 0px 0px 0px;
     text-decoration: none;
-    padding: 20px;
+    position: revert;
     float: right;
-    position: relative;
-    top: 25%;
 }
