@@ -1,8 +1,32 @@
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+
+ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+li{
+    font-size: 5rem;
+    list-style: none;
+}
+
+.title{
+    text-align: center;
+}
+
 .contents {
     display: grid;
 }
 
-.contents-items {
-    display: grid;
-    row-gap: 50px;
+.selectButton{
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    float: right;
+    position: relative;
+    top: 25%;
 }

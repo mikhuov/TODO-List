@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html>
-<script src="index.js"></script>     
+<html >
+
 <head>
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
-    <div id="title">
+<body style="margin: 0;">
+    <div class="title">
         <h2>To Do List</h2>
-    </div>
-
-    <div class="header">
         <input type="text" id="listInput" placeholder="Add Something...">
         <button class="addButton" onclick="add()">Add</button>
+        <h2>Do these things</h2>
     </div>
 
-    <div class="contents">
-        <h2>Do these things</h2>
-        <div >
-            <ul id="toDoList" class="contents-items">
-
-            </ul>
-        </div>
-
+    <div class="contents" onclick="checkOff()">
+        <ul id="toDoList" class="contents-items"></ul>
     </div>
     
+    <script src="index.js"></script>    
 </body>
 </html>
