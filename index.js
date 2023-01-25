@@ -3,11 +3,12 @@ const list = document.getElementById("toDoList");
 
 localStorage.setItem('items', JSON.stringify(data));
 
+
+//Call createLiElement and populate toDolist from localstorage
 data.forEach(createLiElement);
 
 function add() {
     //Adds items to toDoList
-    //Call createLiElement
 
     const li = document.createElement("li");
     const value = document.getElementById("listInput").value;
@@ -42,7 +43,7 @@ function createButtons(li) {
 
     span.className ="buttonSpan";
     button.className ="selectButton";
-    button.onclick = remove;
+    button.setAttribute("onclick", "remove()");
 
     span.appendChild(button);
     li.appendChild(span);
@@ -59,15 +60,17 @@ function createLiElement(textContent){
 function remove() {
     //removes items from the toDoList
     const buttonSpan = document.getElementsByClassName("buttonSpan");
-    var i;
-    for (i = 0; i < buttonSpan.length; i++) {
-        buttonSpan[i].onclick = function() {
-        var div = this.parentElement;
-        div.style.display = "none";
+    const itemArray = Array.from(buttonSpan)
+    data.forEach(del);
 
-        let index = buttonSpan[i].indexOf()
-    
-        data.splice(index, 1);
+    function del(item, index) {
+        buttonSpan[index].onclick = function() {
+            if (itemArray[index].parentNode.innerText === data[index].toString()) {
+                var div = this.parentElement;
+                div.style.display = "none";
+                data.splice(index, 1)
+                localStorage.setItem('items', JSON.stringify(data));
+            }
         }
     }
 }
