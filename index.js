@@ -65,7 +65,7 @@ function remove() {
 
     function del(item, index) {
         buttonSpan[index].onclick = function() {
-            if (itemArray[index].parentNode.innerText === data[index].toString()) {
+            if (itemArray[index].parentNode.innerText === data[index]?.toString()) {
                 var div = this.parentElement;
                 div.style.display = "none";
                 data.splice(index, 1)
