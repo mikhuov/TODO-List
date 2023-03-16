@@ -1,3 +1,4 @@
+//Set List Data
 const data = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 const list = document.getElementById("toDoList");
 
@@ -9,7 +10,6 @@ data.forEach(createLiElement);
 
 function add() {
     //Adds items to toDoList
-
     const li = document.createElement("li");
     const value = document.getElementById("listInput").value;
 
@@ -21,13 +21,15 @@ function add() {
         document.getElementById("toDoList").appendChild(li);
         //Call create Buttons
         createButtons(li);
-        data.push([value]);
+        data.push(value);
         
+        console.log('ADD DATA: ', data);
         localStorage.setItem('items', JSON.stringify(data));
     }
 }
 
 function checkOff() {
+    //Set List Item Status to 'Checked'
     const ul = document.getElementById("toDoList");
     ul.addEventListener("click", event => {
         if (event.target.tagName === "LI" ) {        
@@ -58,19 +60,17 @@ function createLiElement(textContent){
 }
 
 function remove() {
-    //removes items from the toDoList
+    //Remove Li-element and Refreshes Page
     const buttonSpan = document.getElementsByClassName("buttonSpan");
-    const itemArray = Array.from(buttonSpan)
     data.forEach(del);
 
     function del(item, index) {
         buttonSpan[index].onclick = function() {
-            if (itemArray[index].parentNode.innerText === data[index]?.toString()) {
-                var div = this.parentElement;
-                div.style.display = "none";
-                data.splice(index, 1)
-                localStorage.setItem('items', JSON.stringify(data));
-            }
+            data.splice(index, 1);
+            localStorage.setItem('items', JSON.stringify(data));
+            location.reload();
+            this.parentElement.style.display = "none";
+            console.log(data);
         }
     }
 }
